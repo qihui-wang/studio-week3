@@ -108,11 +108,12 @@ p {
   container: 'map', // container id
   style: 'mapbox://styles/qihui-wang/ck8t69qua03dh1ikam0yhes0i' // replace this with your style URL
   });
-    map.fitBounds([[-133.2421875, 16.972741], [-47.63671875, 52.696361]]);
+    
     // wait for map to load before adjusting it
     map.on('load', function() {
        // make a pointer cursor
         map.getCanvas().style.cursor = 'default';
+      map.fitBounds([[-133.2421875, 16.972741], [-47.63671875, 52.696361]]);
       // define layer names
   var layers = ['0-10', '10-20', '20-50', '50-100', '100-200', '200-500', '500-1000', '1000+'];
   var colors = ['#FFEDA0', '#FED976', '#FEB24C', '#FD8D3C', '#FC4E2A', '#E31A1C', '#BD0026', '#800026'];
@@ -144,9 +145,7 @@ map.on('mousemove', function(e) {
   }
 });
        });
-    
-    map.getCanvas().style.cursor = 'default';
-    map.fitBounds([[-133.2421875, 16.972741], [-47.63671875, 52.696361]]);
+  
     
   </script>
 </body>
