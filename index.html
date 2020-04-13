@@ -131,7 +131,9 @@ for (i = 0; i < layers.length; i++) {
   item.appendChild(key);
   item.appendChild(value);
   legend.appendChild(item);
-}
+}      
+  });
+  
     // Add the information window
 map.on('mousemove', function(e) {
   var states = map.queryRenderedFeatures(e.point, {
@@ -143,8 +145,7 @@ map.on('mousemove', function(e) {
     document.getElementById('pd').innerHTML = '<p>Hover over a state!</p>';
   }
 });
-       });
-  
+
     
   </script>
 </body>
