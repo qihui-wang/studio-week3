@@ -24,7 +24,7 @@
 
         #map {
             position: absolute;
-            top: 200px;
+            top: 210px;
             bottom: 0;
             width: 100%;
         }
@@ -46,6 +46,18 @@
     <li><a href="mapbox-turfjs.html" target="_self">Output 3</a></li>
   </ul>
   <br>
+  <!--  Add a function that flies to a location: https://docs.mapbox.com/mapbox-gl-js/api/#map#flyto-->
+    <button type="button" onclick="map.flyTo({
+            center: [-100, 20],
+            zoom: 9,
+            speed: 0.2,
+            curve: 1,
+            easing(t) {
+                return t;
+            }
+        });">
+        Fly to
+    </button>
 
   <div id="map"></div>
   <script>
@@ -66,16 +78,8 @@ var popup = new mapboxgl.Popup({ closeOnClick: false })
 .addTo(map);
     // Add pan and zoom controls: https://docs.mapbox.com/mapbox-gl-js/api/#map#addcontrol
 map.addControl(new mapboxgl.NavigationControl());
-    // Add a function that flies to a location: https://docs.mapbox.com/mapbox-gl-js/api/#map#flyto
-  map.flyTo({
-            center: [-100, 20],
-            zoom: 9,
-            speed: 0.2,
-            curve: 1,
-            easing(t) {
-                return t;
-            }
-        });
+   
+ 
     // Add a function that sets pitch (tilt) to 60 and bearing (rotation) to 45: https://docs.mapbox.com/mapbox-gl-js/api/#map#setpitch and https://docs.mapbox.com/mapbox-gl-js/api/#map#setbearing
  map.setPitch(60);
         map.setBearing(45);
